@@ -7,7 +7,7 @@ import { Insight } from '../../types';
 
 export const Insights: React.FC = () => {
   const [selectedInsight, setSelectedInsight] = useState<Insight | null>(null);
-  const [frequency, setFrequency] = useState(3);
+  const [frequency, setFrequency] = useState(7);
 
   return (
     <div className="p-6 lg:p-12 space-y-10">
@@ -37,20 +37,26 @@ export const Insights: React.FC = () => {
         <div className="flex flex-col gap-3 min-w-[300px] w-full md:w-auto">
             <div className="flex justify-between items-center text-xs font-bold uppercase tracking-widest text-primary">
                 <span>Frequência</span>
-                <span>A cada {frequency} dias</span>
+                <span>A cada {frequency} dia{frequency > 1 ? 's' : ''}</span>
             </div>
-            <input 
-                type="range" 
-                min="1" 
-                max="7" 
-                step="1"
-                value={frequency}
-                onChange={(e) => setFrequency(parseInt(e.target.value))}
-                className="w-full h-1 bg-border-dark rounded-lg appearance-none cursor-pointer accent-primary" 
-            />
+            <div className="flex gap-2">
+              {[1, 3, 7, 15, 30].map((val) => (
+                <button
+                  key={val}
+                  onClick={() => setFrequency(val)}
+                  className={`flex-1 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all border ${
+                    frequency === val
+                      ? 'bg-primary text-background-dark border-primary'
+                      : 'bg-white/[0.02] text-white/60 border-white/10 hover:border-primary/30'
+                  }`}
+                >
+                  {val}d
+                </button>
+              ))}
+            </div>
             <div className="flex justify-between text-[8px] text-white/30 font-mono uppercase">
                 <span>1 dia</span>
-                <span>7 dias</span>
+                <span>30 dias</span>
             </div>
         </div>
       </section>

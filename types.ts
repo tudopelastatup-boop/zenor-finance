@@ -3,10 +3,20 @@ export enum Page {
   REGISTER = 'REGISTER',
   DASHBOARD = 'DASHBOARD',
   TRANSACTIONS = 'TRANSACTIONS',
+  GOALS = 'GOALS',
   INSIGHTS = 'INSIGHTS',
   SUBSCRIPTION = 'SUBSCRIPTION',
   ACCOUNT = 'ACCOUNT',
   SUPPORT = 'SUPPORT'
+}
+
+export interface Goal {
+  id: string;
+  title: string;
+  targetAmount: number;
+  currentAmount: number;
+  deadline: string;
+  category: string;
 }
 
 export interface User {

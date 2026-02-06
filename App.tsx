@@ -6,6 +6,7 @@ import { Dashboard } from './components/pages/Dashboard';
 import { Transactions } from './components/pages/Transactions';
 import { Insights } from './components/pages/Insights';
 import { Account, Subscription, Support } from './components/pages/OtherPages';
+import { Goals } from './components/pages/Goals';
 import { Page } from './types';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
     <Layout currentPage={currentPage} onNavigate={navigateTo}>
       {currentPage === Page.DASHBOARD && <Dashboard onNavigate={navigateTo} />}
       {currentPage === Page.TRANSACTIONS && <Transactions />}
+      {currentPage === Page.GOALS && <Goals />}
       {currentPage === Page.INSIGHTS && <Insights />}
       {currentPage === Page.ACCOUNT && <Account />}
       {currentPage === Page.SUBSCRIPTION && <Subscription />}

@@ -1,4 +1,4 @@
-import { Insight, Transaction, User } from "./types";
+import { Goal, Insight, Transaction, User } from "./types";
 
 export const MOCK_USER: User = {
   name: "Alexandre Zenor",
@@ -83,6 +83,41 @@ export const CHART_DATA = [
   { name: 'Mai', income: 1890, expense: 4800 },
   { name: 'Jun', income: 2390, expense: 3800 },
   { name: 'Jul', income: 3490, expense: 4300 },
+];
+
+export const MOCK_GOALS: Goal[] = [
+  {
+    id: '1',
+    title: 'Reserva de Emergência',
+    targetAmount: 50000,
+    currentAmount: 32500,
+    deadline: 'Dez 2024',
+    category: 'Segurança',
+  },
+  {
+    id: '2',
+    title: 'Viagem Europa',
+    targetAmount: 25000,
+    currentAmount: 18750,
+    deadline: 'Jun 2024',
+    category: 'Lazer',
+  },
+  {
+    id: '3',
+    title: 'Entrada Apartamento',
+    targetAmount: 200000,
+    currentAmount: 85000,
+    deadline: 'Dez 2025',
+    category: 'Imobiliário',
+  },
+  {
+    id: '4',
+    title: 'Fundo de Investimentos',
+    targetAmount: 100000,
+    currentAmount: 47000,
+    deadline: 'Mar 2025',
+    category: 'Investimentos',
+  },
 ];
 
 export const EXPENSE_CATEGORIES = [
